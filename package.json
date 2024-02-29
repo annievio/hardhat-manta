@@ -1,0 +1,42 @@
+{
+  "name": "hardhat-manta",
+  "version": "0.0.5",
+  "description": "Hardhat plugin for Mantle",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annievio/hardhat-manta.git"
+  },
+  "author": "Annie",
+  "license": "MIT",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "keywords": [
+    "ethereum",
+    "smart-contracts",
+    "hardhat",
+    "hardhat-plugin"
+  ],
+  "scripts": {
+    "lint:fix": "prettier --write 'src/**/*.{js,ts}' 'test/**/*.{js,ts}' && tslint --fix --config tslint.json --project tsconfig.json",
+    "lint": "tslint --config tslint.json --project tsconfig.json",
+    "test": "mocha --exit --recursive 'test/**/*.test.ts'",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist/src/",
+    "src/",
+    "LICENSE",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "hardhat": "^2.12.0"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
